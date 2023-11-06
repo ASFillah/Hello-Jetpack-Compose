@@ -1,5 +1,6 @@
 package com.mobiledev.hellojetpackcompose
 
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -37,10 +38,31 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
+@Preview(
+    name = "Without Surface",
+    showSystemUi = true,
+    uiMode = UI_MODE_NIGHT_YES
+)
 @Composable
 fun GreetingPreview() {
     HelloJetpackComposeTheme {
-        Greeting("Android")
+        Greeting("Jetpack Compose")
+    }
+}
+
+@Preview(
+    name = "With Surface",
+    showSystemUi = true,
+    uiMode = UI_MODE_NIGHT_YES
+)
+@Composable
+fun GreetingSurfacePreview() {
+    HelloJetpackComposeTheme {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            Greeting("Jetpack Compose")
+        }
     }
 }

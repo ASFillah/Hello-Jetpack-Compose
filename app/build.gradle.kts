@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.mobiledev.hellojetpackcompose"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.mobiledev.hellojetpackcompose"
